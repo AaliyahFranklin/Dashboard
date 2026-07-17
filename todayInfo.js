@@ -83,7 +83,7 @@ function displayWeather(data)
   //get data
   const cityName = data.name
   let temp = data.main.temp;
-  temp = Math.round(temp) //temp rounded to the nearest integer
+  temp = Math.round(temp) //temp rounded to the nearest whole num
   const description = data.weather[0].description;
 
   //display icon
