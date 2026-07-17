@@ -112,3 +112,4 @@ getWeather()
 getTime()
 getDate()
 setInterval(getTime, 1000) //updates every sec
+setInterval(getWeather, 1.8e+6) //updates every 30 min
