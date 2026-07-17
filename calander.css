@@ -1,0 +1,10 @@
+#calanderContainer{
+    position: fixed;
+    right:30px;
+    height:425px;
+    width:450px;
+    top:30px;
+    border:solid rgb(255, 255, 255);
+    border-radius: 30px;
+    box-shadow: 3px 3px 10px rgba(124, 119, 119, 0.63);
+}

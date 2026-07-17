@@ -1,0 +1,43 @@
+#todayInfoContainer{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    left:30px;
+    height:700px;
+    width:450px;
+    top:30px;
+    border:solid rgb(255, 255, 255);
+    border-radius: 30px;
+    box-shadow: 3px 3px 10px rgba(124, 119, 119, 0.63);
+}
+#dateTimeContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    height:250px;
+    width:400px;
+    border:solid rgb(214, 232, 232);
+    background-color: rgb(214, 232, 232);
+    border-radius: 90px;
+    box-shadow: 3px 3px 10px rgba(124, 119, 119, 0.63);
+}
+#time{
+    margin-top: 30px;
+    font-size:100px;
+}
+#date{
+    font-size:50px;
+}
+#weatherContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:350px;
+    width:400px;
+    border:solid rgb(255, 255, 255);
+    border-radius: 90px;
+    box-shadow: inset 3px 3px 10px rgba(124, 119, 119, 0.63);
+}
