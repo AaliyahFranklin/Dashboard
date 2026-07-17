@@ -35,9 +35,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     height:350px;
     width:400px;
     border:solid rgb(255, 255, 255);
     border-radius: 90px;
     box-shadow: inset 3px 3px 10px rgba(124, 119, 119, 0.63);
+}
+#weatherIcon{
+
+    height:100px;
+    width:100px;
+}
+.weatherDescription{
+    font-size: 50px;
+    margin: 5px;
+}
+.weatherTemp{
+    font-size:50px;
 }

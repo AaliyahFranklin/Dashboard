@@ -54,8 +54,61 @@ function getDate()
   let dateElement = document.getElementById('date')
   dateElement.textContent = `${dayName} ${monthName} ${date}`
 }
+async function getWeather(){
+const city = 'Eugene'; 
+const units = 'imperial'; 
+
+// Construct the secure api.openweathermap.org endpoint URL
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`
+try{
+  const response = await fetch(url)
+   if (!response.ok) { 
+    throw new Error(`City not found or server error (Status: ${response.status})`);
+    }
+  const data = await response.json()
+  displayWeather(data)
+}
+catch(error)
+{
+  console.error('failed to do the thing:',error.message)
+}
+}
 
 
+function displayWeather(data)
+{
+  //parent container
+  const weatherContainer = document.getElementById("weatherContainer")
+
+  //get data
+  const cityName = data.name
+  let temp = data.main.temp;
+  temp = Math.round(temp) //temp rounded to the nearest integer
+  const description = data.weather[0].description;
+
+  //display icon
+  const iconCode = data.weather[0].icon;
+  const weatherIcon = document.createElement('img')
+  weatherIcon.className ='weatherIcon'
+  weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+  weatherContainer.appendChild(weatherIcon)
+
+  //display descripton
+  const weatherDiscription = document.createElement('p')
+  weatherDiscription.className = 'weatherDescription'
+  weatherDiscription.textContent = description
+  weatherContainer.appendChild(weatherDiscription)
+
+  //display temp
+  const weatherTemp = document.createElement('p')
+  weatherTemp.className ='weatherTemp'
+  weatherTemp.textContent = `${temp}°F`
+  weatherContainer.appendChild(weatherTemp)
+  console.log(`Weather in ${cityName}:`);
+  console.log(`Temperature: ${temp}°F`);
+  console.log(`Condition: ${description}`);
+}
+getWeather()
 getTime()
 getDate()
 setInterval(getTime, 1000) //updates every sec
