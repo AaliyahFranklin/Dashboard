@@ -1,9 +1,12 @@
 #calanderContainer{
     position: fixed;
-    right:30px;
-    height:425px;
-    width:450px;
-    top:30px;
+    right:2%;
+    height:90%;
+    width:30%;
+    top:5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     border:solid rgb(255, 255, 255);
     border-radius: 30px;
     box-shadow: 3px 3px 10px rgba(124, 119, 119, 0.63);

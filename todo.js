@@ -67,12 +67,18 @@ function displayList()
       todoList = todoList.filter(t=> t.id !== todo.id) //checks if the todo id we are looking at is different than the one we are removing
       displayList()
     })
-    
-    listItem.textContent = todo.text;
-    listItem.appendChild(completedBtn)
-    listItem.appendChild(deleteBtn)
 
+
+   
+    const textSpan = document.createElement('span') //inline text
+    textSpan.className = 'text'
+    textSpan.textContent = todo.text
+
+    listItem.appendChild(completedBtn)
+    listItem.appendChild(textSpan)
+    listItem.appendChild(deleteBtn)
     listContainer.appendChild(listItem)
+
     todoList = todoList.sort((a,b) => a.completed - b.completed)
   })
   

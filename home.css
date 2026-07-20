@@ -1,0 +1,7 @@
+body{
+    background: rgb(255, 255, 255);
+    font-family: "Ubuntu Sans Mono", monospace;
+    display: flex;
+    flex-direction: row;
+    gap:10%;
+}
