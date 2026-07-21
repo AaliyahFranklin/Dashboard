@@ -1,0 +1,23 @@
+#calendarContainer{
+    position: fixed;
+    flex-direction: column;
+    gap:5%;
+    right:2%;
+    height:90%;
+    width:30%;
+    top:5%;
+    display: flex;
+    border:solid rgb(255, 255, 255);
+    border-radius: 30px;
+    box-shadow: 3px 3px 10px rgba(124, 119, 119, 0.63);
+}
+.eventItem{
+  display: flex;
+  margin-top:5%;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  font-size: clamp(35px, 1vw, 90px);
+}
+.fa-star{
+    color:rgb(214, 232, 232);
+}
