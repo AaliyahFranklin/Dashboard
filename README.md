@@ -8,5 +8,5 @@ Shows the current time and date
 Uses OpenWeatherMap api to fetch the current weather condition of my city 
 ## Calendar Events
 Uses Google Calendar api to fetch my current calendar events
-##Smiskis!!
+## Smiskis!!
 Randomly displays a random smiski to brighten up the day
