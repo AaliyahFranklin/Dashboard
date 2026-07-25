@@ -1,4 +1,4 @@
-
+import { weatherApiKey, city, units } from "./config.js";
 
 function getTime(){   
    const now = new Date;
@@ -10,6 +10,14 @@ function getTime(){
     minutes = "0" + minutes
    }
 
+   //toggle dark mode
+   if(hours >=17 || hours <=7)
+   {
+    document.body.classList.add('dark-mode')
+   }
+   else{
+    document.body.classList.remove('dark-mode')
+   }
    // 24 hr time to 12 hr time
    hours = hours % 12
    hours = hours ? hours:12 //hour 0 should be 12
@@ -55,11 +63,10 @@ function getDate()
   dateElement.textContent = `${dayName} ${monthName} ${date}`
 }
 async function getWeather(){
-const city = 'Eugene'; 
-const units = 'imperial'; 
+ 
 
 // Construct the secure api.openweathermap.org endpoint URL
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${weatherApiKey}`
 try{
   const response = await fetch(url)
    if (!response.ok) { 

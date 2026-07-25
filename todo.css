@@ -8,9 +8,10 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    border:solid rgb(255, 255, 255);
+    border:solid var(--border-color);
+    color:var(--text-color);
     border-radius: 30px;
-    box-shadow: 3px 3px 10px rgba(124, 119, 119, 0.63);
+    box-shadow: 3px 3px 10px var(--shadow-color);
 
 }
 #todoContainer h1{
@@ -23,19 +24,19 @@
    margin-bottom: 3%;
    height:10%;
    width:90%;
-   background-color: rgb(214, 232, 232);
-   border:solid white;
+   background-color: var(--accent-color);
+   border:solid var(--border-color);
    border-radius: 30px;
-   box-shadow: inset 5px 5px 10px rgba(124, 119, 119, 0.63);
+   box-shadow: inset 5px 5px 10px var(--shadow-color);
 
 }
 #listContainer{
     height: 90%;
     width:90%;
     margin-bottom: 5%;
-    border:solid white;
+    border:solid var(--bg-color);
     border-radius: 30px;
-    box-shadow: inset 3px 3px 10px rgba(124, 119, 119, 0.63);
+    box-shadow: inset 3px 3px 10px var(--shadow-color);
     overflow-y: auto;/* Adds vertical scrollbar only when needed */
 }
 #textBox{
@@ -79,10 +80,11 @@
     margin-right: 3%;
     align-items: center;
     background: transparent;;
-    border:solid white;
-    background-color: white;
+    border:solid var(--border-color);
+    background-color: var(--bg-color);
+    color:var(--text-color);
     border-radius: 30px;
-    box-shadow: -3px 3px 10px rgba(62, 60, 60, 0.849);
+    box-shadow: -3px 3px 10px var(--shadow-color);
     user-select: none; 
     
 }
@@ -97,9 +99,9 @@
  align-items: center;
  gap:5%;
  margin:3%;
- border:solid white;
+ border:solid var(--border-color);
  border-radius: 30px; 
- box-shadow: 5px 5px 10px rgba(124, 119, 119, 0.63);
+ box-shadow: 5px 5px 10px var(--shadow-color);
  text-decoration: none;
 
 }

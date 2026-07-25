@@ -1,7 +1,23 @@
+:root{
+  --bg-color: white;
+  --border-color: white;
+  --shadow-color:rgba(124, 119, 119, 0.63);
+  --text-color: black;
+  --accent-color: rgb(214, 232, 232);
+ 
+}
+
 body{
-    background: rgb(255, 255, 255);
+    background: var(--bg-color);
     font-family: "Ubuntu Sans Mono", monospace;
     display: flex;
     flex-direction: row;
     gap:10%;
+}
+body.dark-mode{
+  --bg-color: rgb(27, 27, 33);
+  --border-color:rgb(27, 27, 33);
+  --shadow-color:black;
+  --text-color: white;
+  --accent-color: rgb(99, 115, 115);
 }

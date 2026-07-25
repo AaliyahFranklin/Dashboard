@@ -7,9 +7,9 @@
     height:15%;
     width:30%;
     bottom:5%;
-    border:solid rgb(255, 255, 255);
+    border:solid var(--border-color);
     border-radius: 30px;
-    box-shadow: 3px 3px 10px rgba(124, 119, 119, 0.63);
+    box-shadow: 3px 3px 10px var(--shadow-color);
 }
 img{
     max-height:auto;

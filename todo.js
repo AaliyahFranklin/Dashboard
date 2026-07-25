@@ -1,8 +1,9 @@
+import { supabase } from './supabaseClient.js'
+
 //defining todo struct
 class Todo{
     constructor(text){
       this.text = text
-      this.starred = false
       this.completed = false
       this.id = Date.now()
     }
@@ -16,24 +17,38 @@ const addButton = document.getElementById('addBtn')
 addButton.addEventListener('click',()=>{addTodo()})
 
 
-function addTodo()
+async function addTodo()
 {
     const textBox= document.getElementById('textBox')
     const text = textBox.value
     textBox.value = " " //make the text box empty
-    if(text !== " ")
-    {
-      const newTodo = new Todo(text)
-      todoList.push(newTodo)
-      displayList()
-    }
-   
 
+    const { error } = await supabase
+    .from('Todos')
+    .insert({text: text, completed: false})
+
+    if(error)
+    {
+      console.error('Error adding todo:', error)
+    }
+    else{
+      await displayList()
+    }
 }
-function displayList()
+async function displayList()
 {
+  //fetch from database then display
+  const { data:Todos, error} = await supabase
+  .from('Todos')
+  .select('*')
+  .order('completed', {ascending:true})
+
+  if(error){
+    console.error("Error fetching todos:", error)
+    return
+  }
   listContainer.textContent =""
-  todoList.forEach(todo=>{
+  Todos.forEach(todo=>{
     //create the new todo
     const listItem = document.createElement('div');
     listItem.className ="listItem"
@@ -44,9 +59,11 @@ function displayList()
     const completeBtnIcon = document.createElement('i')
     completeBtnIcon.classList.add("fa-solid", "fa-check")
     completedBtn.appendChild(completeBtnIcon)
-    completedBtn.addEventListener('click', ()=>{
-      todo.completed = true;
-      todoList = todoList.sort((a,b) => a.completed - b.completed) //moves completed todos to bottom
+    completedBtn.addEventListener('click', async()=>{
+      await supabase
+        .from('Todos')
+        .update({completed: true})
+        .eq('id', todo.id)
       displayList()
     })
     //mark as complete
@@ -63,8 +80,11 @@ function displayList()
     const deleteBtnIcon = document.createElement('i')
     deleteBtnIcon.classList.add("fa-solid", "fa-trash")
     deleteBtn.appendChild(deleteBtnIcon)
-    deleteBtn.addEventListener('click',()=>{
-      todoList = todoList.filter(t=> t.id !== todo.id) //checks if the todo id we are looking at is different than the one we are removing
+    deleteBtn.addEventListener('click',async ()=>{
+      await supabase
+        .from('Todos')
+        .delete()
+        .eq('id', todo.id)
       displayList()
     })
 
@@ -83,4 +103,6 @@ function displayList()
   })
   
 }
-displayList()
+
+
+await displayList()

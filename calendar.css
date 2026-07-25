@@ -7,9 +7,10 @@
     width:30%;
     top:5%;
     display: flex;
-    border:solid rgb(255, 255, 255);
+    border:solid var(--border-color);
+    color:var(--text-color);
     border-radius: 30px;
-    box-shadow: 3px 3px 10px rgba(124, 119, 119, 0.63);
+    box-shadow: 3px 3px 10px var(--shadow-color);
 }
 .eventItem{
   display: flex;
@@ -19,5 +20,5 @@
   font-size: clamp(35px, 1vw, 90px);
 }
 .fa-star{
-    color:rgb(214, 232, 232);
+    color:var(--accent-color);
 }
