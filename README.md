@@ -10,5 +10,5 @@ Uses OpenWeatherMap api to fetch the current weather condition of my city
 Uses Google Calendar api to fetch my current calendar events
 ## Smiskis!!
 Randomly displays a random smiski to brighten up the day
-##light/dark mode
+## Light/dark mode
 in the evening the ui will auto switch to dark mode
