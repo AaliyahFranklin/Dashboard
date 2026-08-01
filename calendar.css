@@ -1,20 +1,32 @@
 #calendarContainer{
     position: fixed;
-    flex-direction: column;
-    gap:5%;
-    right:2%;
     height:90%;
     width:30%;
     top:5%;
+    right:2%;
     display: flex;
+    align-items: center;
+    flex-direction: column;
     border:solid var(--border-color);
     color:var(--text-color);
     border-radius: 30px;
     box-shadow: 3px 3px 10px var(--shadow-color);
 }
+#calendarContainer h1{
+    font-size:40px;
+    user-select: none; /* Prevents the user from selecting the text */
+}
+#eventList{
+    flex-direction: column;
+    height:85%;
+    width:85%;
+    border:solid var(--border-color);
+    border-radius: 60px;
+    box-shadow: inset 3px 3px 10px var(--shadow-color);
+}
 .eventItem{
   display: flex;
-  margin-top:5%;
+  margin:5%;
   justify-content: flex-end;
   flex-direction: row-reverse;
   font-size: clamp(35px, 1vw, 90px);

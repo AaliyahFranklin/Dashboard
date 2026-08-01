@@ -26,7 +26,7 @@
    width:90%;
    background-color: var(--accent-color);
    border:solid var(--border-color);
-   border-radius: 30px;
+   border-radius: 60px;
    box-shadow: inset 5px 5px 10px var(--shadow-color);
 
 }
@@ -35,7 +35,7 @@
     width:90%;
     margin-bottom: 5%;
     border:solid var(--bg-color);
-    border-radius: 30px;
+    border-radius: 60px;
     box-shadow: inset 3px 3px 10px var(--shadow-color);
     overflow-y: auto;/* Adds vertical scrollbar only when needed */
 }

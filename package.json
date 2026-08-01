@@ -4,10 +4,14 @@
   "scripts": {
     "start": "electron ."
   },
+  "build":{
+    "icon" : "icon.ico"
+  },
   "devDependencies": {
     "electron": "^43.1.0"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.110.8",
     "googleapis": "^173.0.0"
   }
 }

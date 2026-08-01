@@ -3,3 +3,4 @@ config.js
 client_secret.json
 token.json
 dist/
+mainConfig.js

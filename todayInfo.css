@@ -23,16 +23,16 @@
     width:90%;
     border:solid var(--accent-color);
     background-color: var(--accent-color);
-    border-radius: 90px;
+    border-radius: 60px;
     box-shadow: 3px 3px 10px var(--shadow-color);
 }
 #time{
     margin-top: 5%;
-    font-size: clamp(40px, 8vw, 100px);
+    font-size: clamp(40px, 8vw, 120px);
    
 }
 #date{
-    font-size: clamp(20px, 4vw, 80px);
+    font-size: clamp(20px, 4vw, 60px);
 }
 #weatherContainer{
     display: flex;
@@ -40,24 +40,24 @@
     align-items: center;
     height:55%;
     width:90%;
-    gap:10%;
+    gap:5%;
     border:solid var(--border-color);
-    border-radius: 90px;
+    border-radius: 60px;
     box-shadow: inset 3px 3px 10px var(--shadow-color);
 }
 .weatherIcon{  
     margin: 0;  
-    height:35%;
-    max-width:35%;
+    height:45%;
+    max-width:45%;
 }
 .weatherDescription{
     margin: 0;
-    font-size: 250%;
+    font-size: 350%;
     text-wrap-style: pretty;
     text-align: center;
     
 }
 .weatherTemp{
     margin: 0;
-    font-size:45px;
+    font-size:350%
 }

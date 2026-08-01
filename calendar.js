@@ -5,8 +5,8 @@ async function getCalendarEvents() {
 }
 
 function displayEvents(events) {
-  const calendarContainer = document.getElementById('calendarContainer')
-  calendarContainer.textContent = ""  //clear and rewrite
+  const eventList = document.getElementById('eventList')
+  eventList.textContent = ""  //clear and rewrite
   events.forEach(event => {
     const eventItem = document.createElement('div')
     eventItem.className = "eventItem"
@@ -28,12 +28,13 @@ function displayEvents(events) {
         }    
 
         // 24 hr time to 12 hr time
-        const amPm = hours > 12 ? 'pm' : "am"
+        const amPm = hours >= 12 ? 'pm' : "am"
         hours = hours % 12
         hours = hours ? hours:12 //hour 0 should be 12
             
         eventItem.textContent = eventTitle + " " +'@'+ `${hours}:${minutes} ${amPm}`
-        calendarContainer.appendChild(eventItem)
+        eventList.appendChild(eventItem)
+        
       }            
    }
     else
@@ -44,7 +45,7 @@ function displayEvents(events) {
       if (startDate.toDateString() === today.toDateString()) 
       {
         eventItem.textContent = eventTitle
-        calendarContainer.appendChild(eventItem)
+        eventList.appendChild(eventItem)
       }
     }   
     const starIcon = document.createElement('i')
@@ -54,3 +55,4 @@ function displayEvents(events) {
 }
 
 getCalendarEvents()
+setInterval(getCalendarEvents, 1800000)  // refresh every 30 min, same as weather
