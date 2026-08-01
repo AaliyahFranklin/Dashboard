@@ -11,14 +11,14 @@ function getTime(){
     minutes = "0" + minutes
    }
   
- /*   //toggle dark mode
+   //toggle dark mode
     if(hours >=17 || hours <=7)
    {
     document.body.classList.add('dark-mode')
    }
    else{
     document.body.classList.remove('dark-mode')
-   } */
+   }
  
 
    // 24 hr time to 12 hr time
@@ -97,8 +97,7 @@ function displayWeather(data)
   const description = data.weather[0].description;
 
   //display icon
-  /* const iconCode = data.weather[0].icon; */
-  const iconCode = '01d'
+  const iconCode = data.weather[0].icon;
   const weatherIcon = document.createElement('img')
   weatherIcon.className ='weatherIcon'
   weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
