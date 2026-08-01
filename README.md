@@ -1,12 +1,33 @@
-# Dashboard
-A personal dashboard desktop app that has 5 features:
-## Todo List
-create, add, and remove tasks 
-## Time/date
-Shows the current time and date
-## Daily Weather
-Uses OpenWeatherMap api to fetch the current weather condition of my city 
-## Calendar Events
-Uses Google Calendar api to fetch my current calendar events
-## Smiskis!!
-Randomly displays a random smiski to brighten up the day
+#  Personal Dashboard
+
+A desktop dashboard app that brings together the things I check every day — to-do list, clock, weather, and calendar — into one clean interface, with data synced across devices via a cloud database. Currently being extended to a custom embedded hardware client.
+
+![Dashboard - light mode](screenshots/light-mode.png)
+
+## Features
+
+- **To-Do List** — add, delete, and complete tasks
+- **Live Clock** — always up to date
+- **Weather** — auto-refreshing current conditions via OpenWeatherMap
+- **Calendar** — Google Calendar integration via OAuth, synced through an IPC bridge to the renderer process
+- **Automatic Dark Mode** — switches based on time of day using CSS variables
+- **Cross-Device Sync** — to-dos and calendar events sync to Supabase every 30 minutes, so other devices can read the same data
+- **Packaged Installer** — built and packaged for Windows using electron-builder
+
+![Dashboard - dark mode](screenshots/dark-mode.png)
+
+## Tech Stack
+
+- **Frontend/App Shell:** Electron, JavaScript, HTML/CSS
+- **Backend/Sync:** Supabase (PostgreSQL)
+- **APIs:** Google Calendar API (OAuth2), OpenWeatherMap API
+- **Packaging:** electron-builder
+
+## In Progress
+
+- **Keychain Display** — a LilyGO T-Display (ESP32), programmed in C++ via PlatformIO, showing clock/date, and todos/events from supabase,
+
+
+## Why I Built This
+
+I wanted a single place to see the daily info I actually check — todos, weather, calendar — instead of switching between apps. It also became a chance to get real experience with cloud databases and syncing data across multiple devices, which led to the current project of extending it to physical hardware.
