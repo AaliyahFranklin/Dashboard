@@ -1,10 +1,19 @@
-const { app, BrowserWindow,ipcMain } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const { createClient } = require('@supabase/supabase-js')
 const { google } = require('googleapis')
 const fs = require('fs')
-const { supabaseUrl, supabaseKey } = require('./mainConfig.js')
-const credentials = JSON.parse(fs.readFileSync('./client_secret.json'))
+const path = require('path')
+
+function getResourcePath(filename) {
+  return app.isPackaged
+    ? path.join(process.resourcesPath, filename)
+    : path.join(__dirname, filename)
+}
+
+const credentials = JSON.parse(fs.readFileSync(getResourcePath('client_secret.json')))
 const { client_id, client_secret, redirect_uris } = credentials.installed
+const token = JSON.parse(fs.readFileSync(getResourcePath('token.json')))
+const { supabaseUrl, supabaseKey } = require(getResourcePath('mainConfig.js'))
 
 const supabase = createClient(supabaseUrl, supabaseKey)
 
@@ -13,7 +22,7 @@ const oAuth2Client = new google.auth.OAuth2(
   client_secret,
   redirect_uris[0]
 )
-const token = JSON.parse(fs.readFileSync('./token.json'))
+
 oAuth2Client.setCredentials(token)
 
 
@@ -73,13 +82,15 @@ async function syncEventsToSupabase() {
 
 setInterval(syncEventsToSupabase, 1800000)  // every 30 min
 syncEventsToSupabase()  // also run once on startup
-const path = require('path')
+
+
 function createWindow() {
   const win = new BrowserWindow({
     width: 745,
     height: 1030,
-    frame:true,
-    fullscreen:false,
+    frame: false,
+    fullscreen: false,
+    icon: path.join(__dirname, 'icon.ico'),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
@@ -89,7 +100,6 @@ function createWindow() {
 
   win.loadFile('index.html')
 }
-
 app.whenReady().then(createWindow)
 
 app.on('window-all-closed', () => {

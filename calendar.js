@@ -1,13 +1,15 @@
 
 async function getCalendarEvents() {
   const events = await window.electronAPI.getCalendarEvents()
+  console.log('raw events:', events)  // <- temporary
   displayEvents(events)
 }
 
 function displayEvents(events) {
   const eventList = document.getElementById('eventList')
   eventList.textContent = ""  //clear and rewrite
-  events.forEach(event => {
+  events.forEach(event  => {
+    
     const eventItem = document.createElement('div')
     eventItem.className = "eventItem"
 
@@ -17,6 +19,7 @@ function displayEvents(events) {
     {
       const startDate = new Date(event.start.dateTime)
       const today = new Date
+
       if(startDate.toDateString() === today.toDateString())
       {
         let hours = startDate.getHours()
@@ -39,9 +42,10 @@ function displayEvents(events) {
    }
     else
     {
-      const startDate = new Date(event.start.date)
+      const [year, month, day] = event.start.date.split('-').map(Number)
+      const startDate = new Date(year, month - 1, day)  // month is 0-indexed
       const today = new Date()
-
+      
       if (startDate.toDateString() === today.toDateString()) 
       {
         eventItem.textContent = eventTitle
