@@ -87,9 +87,13 @@ catch(error)
 
 function displayWeather(data)
 {
+
   //parent container
   const weatherContainer = document.getElementById("weatherContainer")
+  
 
+  //clear container first
+  weatherContainer.replaceChildren()
   //get data
   const cityName = data.name
   let temp = data.main.temp;
@@ -122,4 +126,5 @@ getWeather()
 getTime()
 getDate()
 setInterval(getTime, 1000) //updates every sec
-setInterval(getWeather, 1.8e+6) //updates every 30 min
+setInterval(getWeather, 60000)
+//setInterval(getWeather, 1.8e+6) //updates every 30 min
