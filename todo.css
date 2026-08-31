@@ -14,10 +14,6 @@
     box-shadow: 3px 3px 10px var(--shadow-color);
 
 }
-#todoContainer h1{
-    font-size:40px;
-    user-select: none; /* Prevents the user from selecting the text */
-}
 #inputContainer{
    display: flex;
    align-items: center;

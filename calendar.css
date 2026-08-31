@@ -3,26 +3,39 @@
     height:90%;
     width:30%;
     top:5%;
+    gap:5%;
     right:2%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    border:solid var(--border-color);
-    color:var(--text-color);
-    border-radius: 30px;
-    box-shadow: 3px 3px 10px var(--shadow-color);
 }
-#calendarContainer h1{
-    font-size:40px;
-    user-select: none; /* Prevents the user from selecting the text */
-}
-#eventList{
+#todayContainer{
     flex-direction: column;
-    height:85%;
-    width:85%;
+    height:50%;
+    width:100%;
     border:solid var(--border-color);
-    border-radius: 60px;
-    box-shadow: inset 3px 3px 10px var(--shadow-color);
+    border-radius: 50px;
+    box-shadow:  3px 3px 10px var(--shadow-color);
+}
+#todayList{
+    flex-direction: column;
+    height:90%;
+    width:100%;
+    border-radius: 50px;
+}
+#upcomingContainer{
+    flex-direction: column;
+    height:50%;
+    width:100%;
+    border:solid var(--border-color);
+    border-radius: 50px;
+    box-shadow:  3px 3px 10px var(--shadow-color);
+}
+#upcomingList{
+    flex-direction: column;
+    height:90%;
+    width:100%;
+    border-radius: 50px;
 }
 .eventItem{
   display: flex;

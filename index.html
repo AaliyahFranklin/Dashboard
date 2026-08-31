@@ -17,7 +17,9 @@
   </head>
   <body>
     <div id="todoContainer">
-      <h1>Tasks</h1>
+      <div class="TitleContainers">
+        <h1 class="Titles">Tasks</h1>
+      </div>
       <div id="listContainer"></div>
       <div id="inputContainer">
         <input type="text" id="textBox">
@@ -32,9 +34,22 @@
       <div id="weatherContainer"></div>
     </div>
     <div id="smiskiContainer"></div>
+
     <div id ="calendarContainer">
-      <h1>Events</h1>
-      <div id ="eventList"></div>
+
+      <div id ="todayContainer">
+        <div class="TitleContainers">
+         <h1 class="Titles">Today</h1>
+        </div>
+        <div id="todayList"></div>
+      </div>
+       
+      <div id="upcomingContainer">
+        <div class="TitleContainers">
+           <h1 class="calanderTitles">Upcoming</h1>
+        </div>
+        <div id="upcomingList"></div>
+      </div>
     </div>
     
     <script type="module" src="config.js"></script>
