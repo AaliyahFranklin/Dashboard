@@ -88,8 +88,8 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 745,
     height: 1030,
-    frame: true,
-    fullscreen: false,
+    frame: false,
+    fullscreen: true,
     icon: path.join(__dirname, 'icon.ico'),
     webPreferences: {
       nodeIntegration: false,
