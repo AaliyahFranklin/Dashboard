@@ -2,7 +2,7 @@
 
 A desktop dashboard app that brings together the things I check every day — to-do list, clock, weather, and calendar — into one clean interface, with data synced across devices via a cloud database. Currently being extended to a custom embedded hardware client.
 
-![Dashboard - light mode](screenshots/Dashboard 1.1 - light)
+![Dashboard - light mode](screenshots/Dashboard 1.1 - light.png)
 
 ## Features
 
@@ -14,7 +14,7 @@ A desktop dashboard app that brings together the things I check every day — to
 - **Cross-Device Sync** — to-dos and calendar events sync to Supabase every 30 minutes, so other devices can read the same data
 - **Packaged Installer** — built and packaged for Windows using electron-builder
 
-![Dashboard - dark mode](screenshots/Dashboard 1.1 - dark)
+![Dashboard - dark mode](screenshots/Dashboard 1.1 - dark.png)
 
 ## Tech Stack
 
