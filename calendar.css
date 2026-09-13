@@ -22,6 +22,7 @@
     height:90%;
     width:100%;
     border-radius: 50px;
+    color:var(--text-color);
 }
 #upcomingContainer{
     flex-direction: column;
@@ -36,6 +37,7 @@
     height:90%;
     width:100%;
     border-radius: 50px;
+    color:var(--text-color);
 }
 .eventItem{
   display: flex;

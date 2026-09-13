@@ -4,7 +4,6 @@
   --shadow-color:rgba(124, 119, 119, 0.63);
   --text-color: black;
   --accent-color: rgb(214, 232, 232);
- 
 }
 body{
     background: var(--bg-color);
