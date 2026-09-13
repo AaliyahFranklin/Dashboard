@@ -3,7 +3,8 @@ import { weatherApiKey, city, units } from "./config.js";
 function getTime(){   
    const now = new Date;
    let hours = now.getHours()  //0-23
-   let minutes = now.getMinutes()//0-59
+   let minutes = now.getMinutes()//0-59 
+
 
    if(minutes < 10)
    {
