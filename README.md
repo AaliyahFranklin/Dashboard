@@ -2,7 +2,7 @@
 
 A desktop dashboard app that brings together the things I check every day — to-do list, clock, weather, and calendar — into one clean interface, with data synced across devices via a cloud database. Currently being extended to a custom embedded hardware client.
 
-![Dashboard - light mode](screenshots/light-mode.png)
+![Dashboard - light mode](screenshots/Dashboard-1.1-light.png)
 
 ## Features
 
@@ -14,7 +14,7 @@ A desktop dashboard app that brings together the things I check every day — to
 - **Cross-Device Sync** — to-dos and calendar events sync to Supabase every 30 minutes, so other devices can read the same data
 - **Packaged Installer** — built and packaged for Windows using electron-builder
 
-![Dashboard - dark mode](screenshots/dark-mode.png)
+![Dashboard - dark mode](screenshots/Dashboard-1.1-dark.png)
 
 ## Tech Stack
 
@@ -27,7 +27,3 @@ A desktop dashboard app that brings together the things I check every day — to
 
 - **Keychain Display** — a LilyGO T-Display (ESP32), programmed in C++ via PlatformIO, showing clock/date, and todos/events from supabase,
 
-
-## Why I Built This
-
-I wanted a single place to see the daily info I actually check — todos, weather, calendar — instead of switching between apps. It also became a chance to get real experience with cloud databases and syncing data across multiple devices, which led to the current project of extending it to physical hardware.
