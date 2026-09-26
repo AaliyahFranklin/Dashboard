@@ -1,7 +1,6 @@
 #  Personal Dashboard
 
-A desktop dashboard app that brings together the things I check every day — to-do list, clock, weather, and calendar — into one clean interface, with data synced across devices via a cloud database. Currently being extended to a custom embedded hardware client.
-
+A desktop dashboard app that brings together the things I check every day — to-do list, clock, weather, and calendar — into one clean interface, with data synced across devices via a cloud database. 
 ![Dashboard - light mode](screenshots/Dashboard-1.1-light.png)
 
 ## Features
@@ -23,7 +22,5 @@ A desktop dashboard app that brings together the things I check every day — to
 - **APIs:** Google Calendar API (OAuth2), OpenWeatherMap API
 - **Packaging:** electron-builder
 
-## In Progress
 
-- **Keychain Display** — a LilyGO T-Display (ESP32), programmed in C++ via PlatformIO, showing clock/date, and todos/events from supabase,
 
